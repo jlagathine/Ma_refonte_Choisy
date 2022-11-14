@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { lesImages } from '../image';
+import { ActivatedRoute, Route } from '@angular/router';
+import { carouselImage } from '../carouselImage';
 import { PresentationService } from '../presentation.service';
 
 @Component({
@@ -8,16 +9,54 @@ import { PresentationService } from '../presentation.service';
   styleUrls: ['./carroussel.component.css']
 })
 export class CarrousselComponent implements OnInit {
-  @Input() images: lesImages | undefined
-  @Input() img : lesImages [] | undefined
-  selectindex = 0;
+images: carouselImage [];
+image : carouselImage | undefined;
+indexSelector : number = 0;
+indicator = true;
+controls = true;
+autoSlide=false;
+SlideInterval= 3000;
+
 
   constructor(
-    private presentationService: PresentationService
+    private route:ActivatedRoute,
+    private presentationService : PresentationService,
   ) { }
 
   ngOnInit(){
-   this.images = this.presentationService.getImages();
+    this.images = this.presentationService.getImage();
+    const imageId: string | null = this.route.snapshot.paramMap.get('id');
+    if(imageId){
+    this.image = this.presentationService.getImageById(+imageId);
+    if(this.autoSlide){
+      this.autoSlideImage();
+    }
+    }
   }
 
+  selectImage(i:number):void {
+    this.indexSelector = i;
+    console.log(i)
+  }
+
+  selectImagePrev():void {
+    if(this.indexSelector == 0){
+      this.indexSelector = this.images.length - 1;
+    }else{
+      this.indexSelector--;
+    }
+      }
+
+  selectImageNext():void {
+    if(this.indexSelector === this.images.length - 1){
+      this.indexSelector = 0;
+    }else{
+      this.indexSelector++;
+    }
+      }
+
+  autoSlideImage(): void{
+    setInterval(()=> {this.selectImageNext();},
+    this.SlideInterval);
+  }
 }

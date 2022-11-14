@@ -10,6 +10,7 @@ import { CarrousselComponent } from './carroussel/carroussel.component';
   imports: [
     CommonModule
   ],
+  exports: [CarrousselComponent],
   providers:[PresentationService]
 })
 export class PresentationModule { }
