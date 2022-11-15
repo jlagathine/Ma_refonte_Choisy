@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { carouselImage } from './presentation/carouselImage';
 import { PresentationModule } from './presentation/presentation.module';
 import { PresentationService } from './presentation/presentation.service';
 
@@ -12,8 +11,8 @@ import { PresentationService } from './presentation/presentation.service';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+        BrowserModule,
+      AppRoutingModule,
     PresentationModule
   ],
   providers: [PresentationService],

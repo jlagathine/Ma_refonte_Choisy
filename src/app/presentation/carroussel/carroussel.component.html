@@ -1,34 +1,38 @@
-
 <div *ngIf="images && images.length > 0" class="carousel-inner">
-  <img *ngFor="let image of images; let i=index" 
-    [src]="image.image"
-    [ngClass]="{'carousel-item active': indexSelector === i}">
+  <img
+    *ngFor="let image of images; let i = index"
+    [src]="intervalImage()"
+    [ngClass]="{ 'carousel-item active': indexSelector === i }"
+  />
 
-    <div class="card-body">
-      <h2 class="card-title">titre</h2>
+  <div class="card">
+    <div
+      *ngFor="let text of images; let i = index"
+      class="card-body"
+      [ngClass]="{ 'text active': indexSelector === i }"
+    >
+      <h1 class="card-title">{{ text.titre }}</h1>
+      <p class="card-text">{{ text.descript }}</p>
     </div>
+  </div>
 
-    <div *ngIf="indicator" class="carousel-indicators">
-      <span *ngFor="let button of images; let i=index"
+  <div *ngIf="indicator" class="carousel-indicators">
+    <span
+      *ngFor="let button of images; let i = index"
       class="dot"
-        [ngClass]="{'active': indexSelector === i}"
-        (click)="selectImage(i)">
+      [ngClass]="{ active: indexSelector === i }"
+      (click)="selectImage(i)"
+    >
     </span>
-    </div>
+  </div>
 
-    <div *ngIf="controls">
-      <span 
-      class="carousel-control-prev-icon"
-      (click)="selectImagePrev()">
+  <div *ngIf="controls">
+    <span class="carousel-control-prev-icon" (click)="selectImagePrev()">
     </span>
-    </div>
+  </div>
 
-    <div *ngIf="controls">
-      <span class="carousel-control-next-icon"
-      (click)="selectImageNext()">
-      </span>
-    </div>
-    
+  <div *ngIf="controls">
+    <span class="carousel-control-next-icon" (click)="selectImageNext()">
+    </span>
+  </div>
 </div>
-
-
