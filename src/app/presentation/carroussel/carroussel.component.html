@@ -1,7 +1,8 @@
 <div *ngIf="images && images.length > 0" class="carousel-inner">
+  <input />
   <img
     *ngFor="let image of images; let i = index"
-    [src]="intervalImage()"
+    [src]="image.image"
     [ngClass]="{ 'carousel-item active': indexSelector === i }"
   />
 

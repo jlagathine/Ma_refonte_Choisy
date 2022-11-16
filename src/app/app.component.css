@@ -1,0 +1,22 @@
+.background-image {
+  background-image: url("https://www.outsideonline.com/wp-content/uploads/2019/10/23/geyser-yelowstone-burst_h.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+.card-body {
+  cursor: pointer;
+  height: 600px;
+  width: 600px;
+  margin-top: 175px;
+  margin-left: 600px;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0);
+  opacity: 1;
+}
+
+.card-body img {
+  height: 600px;
+  width: 600px;
+  margin: 0;
+  margin-top: 0;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { carouselImage } from '../carouselImage';
 import { PresentationService } from '../presentation.service';
@@ -14,8 +14,8 @@ export class CarrousselComponent implements OnInit {
   indexSelector: number = 0;
   indicator = true;
   controls = true;
-  autoSlide = false;
-  SlideInterval = 3000;
+  @Input() autoSlide = false;
+  @Input() SlideInterval = 3000;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +28,10 @@ export class CarrousselComponent implements OnInit {
     const imageId: string | null = this.route.snapshot.paramMap.get('id');
     if (imageId) {
       this.image = this.presentationService.getImageById(+imageId);
+    }
 
-      if (this.autoSlide) {
-        this.autoSlideImage();
-      }
+    if (this.autoSlide) {
+      this.autoSlideImage();
     }
   }
 
