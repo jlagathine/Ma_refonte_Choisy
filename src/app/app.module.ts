@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,12 @@ import { PresentationService } from './presentation/presentation.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, PresentationModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PresentationModule,
+    BrowserAnimationsModule,
+  ],
   providers: [PresentationService],
   bootstrap: [AppComponent],
 })
