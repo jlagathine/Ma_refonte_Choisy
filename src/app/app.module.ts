@@ -7,16 +7,9 @@ import { PresentationModule } from './presentation/presentation.module';
 import { PresentationService } from './presentation/presentation.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PresentationModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, PresentationModule],
   providers: [PresentationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
