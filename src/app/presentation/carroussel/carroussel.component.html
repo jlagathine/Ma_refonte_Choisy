@@ -3,6 +3,7 @@
     *ngFor="let image of images; let i = index"
     [src]="image.image"
     [ngClass]="{ 'carousel-item active': indexSelector === i }"
+    class="fade"
   />
 
   <div class="card">

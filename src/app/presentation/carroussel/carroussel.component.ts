@@ -14,7 +14,7 @@ export class CarrousselComponent implements OnInit {
   indexSelector: number = 0;
   indicator = true;
   controls = true;
-  @Input() autoSlide = false;
+  @Input() autoSlide = true;
   @Input() SlideInterval = 3000;
 
   constructor(
@@ -30,7 +30,7 @@ export class CarrousselComponent implements OnInit {
       this.image = this.presentationService.getImageById(+imageId);
     }
 
-    if (this.autoSlide) {
+    if (this.indicator) {
       this.autoSlideImage();
     }
   }
