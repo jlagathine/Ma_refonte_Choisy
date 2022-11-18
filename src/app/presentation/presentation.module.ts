@@ -10,10 +10,15 @@ import { AuthentificationComponent } from './authentification/authentification.c
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'accueil/accueil1', component: CarrousselComponent },
+  { path: 'authentification', component: AuthentificationComponent },
 ];
 
 @NgModule({
-  declarations: [CarrousselComponent, AccueilComponent, AuthentificationComponent],
+  declarations: [
+    CarrousselComponent,
+    AccueilComponent,
+    AuthentificationComponent,
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

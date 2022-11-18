@@ -1,0 +1,45 @@
+.background-image {
+  background-image: url("https://www.outsideonline.com/wp-content/uploads/2019/10/23/geyser-yelowstone-burst_h.jpg");
+  background-size: cover;
+  height: 100vh;
+  /* opacity: 0.5; */
+}
+
+.container {
+  border: 5px;
+  background-color: hsla(0, 0%, 0%, 0);
+  justify-content: center;
+}
+.card-content {
+  text-align: center;
+  justify-content: center;
+  display: grid;
+}
+
+.card-content label {
+  padding: 15px;
+  text-align: left;
+  color: #fff;
+}
+
+.card-content input {
+  align-items: center;
+  width: 500px;
+  border-radius: 3pt;
+  border: 0;
+}
+
+.card-content button {
+  margin-top: 15px;
+  border: 0;
+  background-color: #f1895c;
+  color: #fff;
+  border-radius: 3pt;
+  margin-right: 300pt;
+}
+
+.card-content a {
+  padding: 15px;
+  text-align: left;
+  color: #fff;
+}
